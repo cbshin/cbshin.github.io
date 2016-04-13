@@ -4,7 +4,19 @@
 	<meta charset="UTF-8">
 	<title>Challenge 3</title>
     <script type="text/javascript">
-    /*    Your code here  */    
+
+    function checkForm() {
+      if(document.getElementById('optstraw').checked) {
+        return true;
+      }
+      else if(document.getElementById('optblue').checked) {
+        return true;
+      }
+      else {
+          window.alert("Please select your favorite berry!");
+          return false;
+      } 
+    }
     </script>
 </head>
 <body>
