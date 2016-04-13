@@ -4,15 +4,45 @@
 	<meta charset="UTF-8">
 	<title>Challenge 4</title>
     <style>
-    /*    Your code here  */    
+    .errormsg {
+      color: red;
+      font-weight: bold;
+      font-family: Arial;
+      display: none;
+    }
     </style>
     
     <script type="text/javascript">
-    /*    Your code here  */    
+    function checkForm() {
+
+      if(!document.getElementById('streetaddr').value && !document.getElementById('fullname').value) {
+        document.getElementById("addrerrormsg").style.display="inline";
+        document.getElementById("nameerrormsg").style.display="inline";
+        return false;
+      }
+
+      if(!document.getElementById('fullname').value) {
+        document.getElementById("nameerrormsg").style.display="inline";
+        return false;
+      }
+      else if(document.getElementById('fullname').value) {
+        document.getElementById("nameerrormsg").style.display="none";
+      }
+      if(!document.getElementById('streetaddr').value) {
+        document.getElementById("addrerrormsg").style.display="inline";
+        return false;
+      }
+      else if(document.getElementById('streetaddr').value) {
+        document.getElementById("addrerrormsg").style.display="none";
+      }
+      else {
+        return true;
+      }
+    }
     </script>
 </head>
 <body>
-	<form  action="mailto:me@fakeemail.com" onsubmit="return checkForm();">
+	<form  action="mailto:me@fakeemail.com" name="Form" onsubmit="return checkForm();">
   <fieldset>
 
     <legend>Personal details</legend>
