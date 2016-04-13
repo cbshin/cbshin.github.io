@@ -24,7 +24,16 @@ Add an if-else statement to your setHomeAddress() function so that when the chec
 	<title>Challenge Two</title>
     
     <script type="text/javascript">
-    /*    Your code here  */    
+    function setHomeAddress() {
+      if(document.getElementById('homepostalcheck').checked) {
+        document.getElementById('homeaddress').value = document.getElementById('postaladdress').value;
+        document.getElementById('homeaddress').disabled = true;
+      }
+      else {
+        document.getElementById('homeaddress').value = "";
+        document.getElementById('homeaddress').disabled = false;
+      }
+    }
     </script>
 </head>
 <body>
